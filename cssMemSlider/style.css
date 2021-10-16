@@ -47,6 +47,7 @@ body {
 .wrapper {
   display: flex;
   width: 100%;
+  height: 5rem;
 }
 
 .captions-wrapper {
@@ -60,8 +61,9 @@ body {
 }
 
 .caption {
-  width: 100%;
-  margin: 0.5rem 1rem;
+  width: 20%;
+  padding: 0.5rem 1rem;
+  transition: all 0.6s;
 }
 
 .controls {
@@ -79,22 +81,27 @@ body {
   cursor: pointer;
 }
 
-#r1:checked ~ .slides-wrapper > .slides > .s1 {
+#r1:checked ~ .slides-wrapper > .slides > .s1,
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: 0;
 }
 
-#r2:checked ~ .slides-wrapper > .slides > .s1 {
+#r2:checked ~ .slides-wrapper > .slides > .s1,
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: -20%;
 }
 
-#r3:checked ~ .slides-wrapper > .slides > .s1 {
+#r3:checked ~ .slides-wrapper > .slides > .s1,
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: -40%;
 }
 
-#r4:checked ~ .slides-wrapper > .slides > .s1 {
+#r4:checked ~ .slides-wrapper > .slides > .s1,
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: -60%;
 }
 
-#r5:checked ~ .slides-wrapper > .slides > .s1 {
+#r5:checked ~ .slides-wrapper > .slides > .s1,
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: -80%;
 }
