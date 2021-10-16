@@ -5,15 +5,16 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: #ffcc99;
   font-size: 24px;
+  color: #666;
 }
 
 .container {
   /* 1000 px */
   width: 62.5rem;
-  background-color: lightseagreen;
-  margin: 0 auto;
+  /* background-color: lightseagreen; */
+  margin: 1rem auto;
 }
 
 .slider {
@@ -75,10 +76,25 @@ body {
 
 .dot {
   display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-color: lime;
+  width: 40px;
+  height: 40px;
+  /* background-color: lightsteelblue; */
   cursor: pointer;
+}
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  margin: 0.5rem auto;
+  background-color: #999;
+  border: 3px solid #999;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.dot:hover .color-dot {
+  background-color: #666;
+  border-color: #666;
 }
 
 #r1:checked ~ .slides-wrapper > .slides > .s1,
@@ -104,4 +120,29 @@ body {
 #r5:checked ~ .slides-wrapper > .slides > .s1,
 #r5:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
   margin-left: -80%;
+}
+
+input[name="r"] {
+  visibility: hidden;
+  display: none;
+}
+
+#r1:checked ~ .wrapper > .controls > .dot > .d1 {
+  background-color: inherit;
+}
+
+#r2:checked ~ .wrapper > .controls > .dot > .d2 {
+  background-color: inherit;
+}
+
+#r3:checked ~ .wrapper > .controls > .dot > .d3 {
+  background-color: inherit;
+}
+
+#r4:checked ~ .wrapper > .controls > .dot > .d4 {
+  background-color: inherit;
+}
+
+#r5:checked ~ .wrapper > .controls > .dot > .d5 {
+  background-color: inherit;
 }
