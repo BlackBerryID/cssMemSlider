@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #ffcc99;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+.container {
+  /* 1000 px */
+  max-width: 62.5rem;
+  width: 95vw;
+  margin: 1rem auto;
+}
+
+@media (max-width: 320px) {
+  .container {
+    margin: 2rem auto;
+  }
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides-wrapper {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  max-height: 37.5rem;
+  height: 65vw;
+}
+
+.slide {
+  width: 20%;
+  height: 100%;
+  transition: all 0.6s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+}
+
+.captions-wrapper {
+  width: 50%;
+  overflow: hidden;
+}
+
+@media (max-width: 320px) {
+  .captions-wrapper {
+    width: 100%;
+  }
+}
+
+.captions {
+  display: flex;
+  width: 500%;
+}
+
+.caption {
+  width: 20%;
+  padding: 0.5rem 1rem;
+  transition: all 0.6s, opacity 0s;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  margin: 0.5rem 2.5rem 0 0;
+}
+
+@media (max-width: 320px) {
+  .controls {
+    width: 100%;
+    align-self: center;
+    margin: 20px 100px 20px 0;
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.color-dot {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.5rem auto;
+  background-color: #999;
+  border: 3px solid #999;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.dot:hover .color-dot {
+  background-color: #666;
+  border-color: #666;
+}
+
+.dot:active .color-dot {
+  background-color: #333;
+  border-color: #333;
+}
+
+#r1:checked ~ .slides-wrapper > .slides > .s1,
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
+  margin-left: 0;
+}
+
+#r2:checked ~ .slides-wrapper > .slides > .s1,
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
+  margin-left: -20%;
+}
+
+#r3:checked ~ .slides-wrapper > .slides > .s1,
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
+  margin-left: -40%;
+}
+
+#r4:checked ~ .slides-wrapper > .slides > .s1,
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
+  margin-left: -60%;
+}
+
+#r5:checked ~ .slides-wrapper > .slides > .s1,
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c1 {
+  margin-left: -80%;
+}
+
+input[name="r"] {
+  visibility: hidden;
+  display: none;
+}
+
+#r1:checked ~ .wrapper > .controls > .dot > .d1 {
+  background-color: inherit;
+}
+
+#r2:checked ~ .wrapper > .controls > .dot > .d2 {
+  background-color: inherit;
+}
+
+#r3:checked ~ .wrapper > .controls > .dot > .d3 {
+  background-color: inherit;
+}
+
+#r4:checked ~ .wrapper > .controls > .dot > .d4 {
+  background-color: inherit;
+}
+
+#r5:checked ~ .wrapper > .controls > .dot > .d5 {
+  background-color: inherit;
+}
+
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c2,
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c3,
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c4,
+#r1:checked ~ .wrapper > .captions-wrapper > .captions > .c5 {
+  opacity: 0;
+}
+
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c1,
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c3,
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c4,
+#r2:checked ~ .wrapper > .captions-wrapper > .captions > .c5 {
+  opacity: 0;
+}
+
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c1,
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c2,
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c4,
+#r3:checked ~ .wrapper > .captions-wrapper > .captions > .c5 {
+  opacity: 0;
+}
+
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c1,
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c2,
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c3,
+#r4:checked ~ .wrapper > .captions-wrapper > .captions > .c5 {
+  opacity: 0;
+}
+
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c1,
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c2,
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c3,
+#r5:checked ~ .wrapper > .captions-wrapper > .captions > .c4 {
+  opacity: 0;
+}
